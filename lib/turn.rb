@@ -41,6 +41,16 @@ end
 def move(array,input,current_player ="X")
   array[input] = current_player
 end
+
 def turn(board)
   puts "Please enter 1-9:"
+  input = gets.strip
+  input_to_index(input)
+  if valid_move(board,index) == true
+    move(array,input)
+    display_board(board)
+  else 
+    turn(board)
+  end 
 end
+    
